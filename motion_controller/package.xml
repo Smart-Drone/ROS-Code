@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>motion_controller</name>
+  <version>1.0.0</version>
+  <description>The motion_controller package</description>
+  <maintainer email="martin@klimstein.com">Martin Klimstein</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rosconsole</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rosconsole</exec_depend>
+</package>
