@@ -9,12 +9,17 @@ int main(int argc, char **argv)
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
 
-    UDPClient udp("192.168.1.2", 4210);
+    UDPClient udp_client("192.168.1.2", "192.168.1.3", 4210);
+    udp_client.requestData();
 
     while (ros::ok())
     {
-        std::string sensor_data = udp.requestData();
-        ROS_INFO("%s", sensor_data.c_str());
+        std::vector<char> mdr = udp_client.readData(MOTION_DATA_RIGHT);
+        ROS_INFO("RIGHT:%d#%d", mdr[1], mdr[2]);
+
+        std::vector<char> mdl = udp_client.readData(MOTION_DATA_LEFT);
+        ROS_INFO("LEFT:%d#%d", mdl[1], mdl[2]);
+
         ros::spinOnce();
         loop_rate.sleep();
     }
