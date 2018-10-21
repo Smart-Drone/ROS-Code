@@ -49,7 +49,8 @@ no-hosts
 addn-hosts=/etc/hosts.dnsmasq
 
 # IP address assignment for uControllers
-dhcp-host=60:01:94:43:3d:a0,MOTION-CONTROLLER-RIGHT,192.168.1.2
+dhcp-host=5C:CF:7F:6C:D9:70,MOTION-CONTROLLER-RIGHT,192.168.1.2
+dhcp-host=60:01:94:43:3D:A0,MOTION-CONTROLLER-LEFT,192.168.1.3
 
 server=8.8.4.4
 server=8.8.8.8
