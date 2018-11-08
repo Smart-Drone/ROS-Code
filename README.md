@@ -34,7 +34,7 @@ iface lo inet loopback
 # WiFi interface for communication with uControllers
 auto wlp2s0
 iface wlp2s0 inet static
-  address 192.168.1.1
+  address 10.0.0.1
   netmask 255.255.255.0
 ```
 * Edit ```/etc/dnsmasq.conf```
@@ -44,13 +44,13 @@ no-resolv
 # WiFi interface for communication with uControllers
 interface=wlp2s0
 
-dhcp-range=192.168.1.100,192.168.1.254,255.255.255.0,12h
+dhcp-range=10.0.0.100,10.0.0.254,255.255.255.0,12h
 no-hosts
 addn-hosts=/etc/hosts.dnsmasq
 
 # IP address assignment for uControllers
-dhcp-host=5C:CF:7F:6C:D9:70,MOTION-CONTROLLER-RIGHT,192.168.1.2
-dhcp-host=60:01:94:43:3D:A0,MOTION-CONTROLLER-LEFT,192.168.1.3
+dhcp-host=5C:CF:7F:6C:D9:70,MOTION-CONTROLLER-RIGHT,10.0.0.2
+dhcp-host=60:01:94:43:3D:A0,MOTION-CONTROLLER-LEFT,10.0.0.3
 
 server=8.8.4.4
 server=8.8.8.8

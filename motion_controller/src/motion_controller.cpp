@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     ros::Publisher cmd_vel_pub = n.advertise<geometry_msgs::Twist>("cmd_vel", 100);
     ros::Rate loop_rate(10);
 
-    UDPClient udp_client("192.168.1.2", "192.168.1.3", 4210);
+    UDPClient udp_client("10.0.0.2", "10.0.0.3", 4210);
     udp_client.requestData();
 
     while (ros::ok())
