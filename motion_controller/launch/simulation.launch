@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find cvg_sim_gazebo)/launch/ardrone_testworld.launch" />
+    <node name="motion_controller_1" pkg="motion_controller" type="motion_controller" output="screen" />
+    <node name="keyboard_controller_1" pkg="keyboard_controller" type="keyboard_controller" output="screen" />
+</launch>
